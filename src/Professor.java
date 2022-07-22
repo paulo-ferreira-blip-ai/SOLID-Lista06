@@ -44,7 +44,9 @@ public class Professor extends Funcionario{
 
     @Override
     public void aumentoSalario() {
+
         this.setSalario(this.getSalario() * 0.1);
+        System.out.printf("O aumento de salário foi de: R$ %.2f \n",salario);
     }
 
 
@@ -56,7 +58,7 @@ public class Professor extends Funcionario{
 
     @Override
     public String toString() {
-        return ("Professor: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ "\nOrgão Lotação: "+getOrgaoLotacao()+" Salário: "+getSalario()+" Gastos: "+getGastos()+"\nEstagiários supervisionados: "+estagiario+"\nTurmas: "+turmas);
+        return ("Professor: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ "\nOrgão Lotação: "+getOrgaoLotacao()+" Salário: R$ "+getSalario()+" Gastos: "+getGastos()+"\nEstagiários supervisionados: "+estagiario+"\nTurmas: "+turmas);
     }
 
     //MÉTODOS ESPECIAIS/////////////////////////////////////////////////////////

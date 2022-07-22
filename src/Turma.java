@@ -3,7 +3,7 @@ public class Turma {
     private String nome;
 
     //MÉTODOS ESPECIAIS/////////////////////////////////////////////////////////
-    public Turma(String nome) {
+    public Turma() {
         this.nome = nome;
     }
 

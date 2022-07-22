@@ -24,13 +24,15 @@ public class Coordenador extends Funcionario{
 
     @Override
     public void aumentoSalario() {
+
         this.setSalario(this.getSalario() * 0.05);
+        System.out.printf("O aumento de salário foi de: R$ %.2f \n", getSalario());
     }
 
 
     @Override
     public String toString() {
-        return ("Coordenador: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ "\nOrgão Lotação: "+getOrgaoLotacao()+" Salário: "+getSalario()+" Gastos: "+getGastos()+"\nProfessores supervisionados: "+professoresSupervisionados);
+        return ("Coordenador: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ "\nOrgão Lotação: "+getOrgaoLotacao()+" Salário: R$ "+getSalario()+" Gastos: "+getGastos()+"\nProfessores supervisionados: "+professoresSupervisionados);
     }
 
     //Método para adiconar Professor:
