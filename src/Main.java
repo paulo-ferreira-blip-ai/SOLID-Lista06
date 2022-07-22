@@ -8,8 +8,12 @@ public class Main {
         e1.setOrgãoDeLotacao("SEDUC");
         e1.setBolsa(400);
         e1.setGastos(300);
+        e1.setDisciplinaMinistrada("Matemática");
+        e1.setNivelGraduacao("Superior");
         System.out.println(e1.toString());
         e1.reembolsoDespesas();
+        //e1.adicionaTurma();
+
 
         Estagiário e2 = new Estagiário();
         e2.setNome("Toreto Mendes");
@@ -18,9 +22,11 @@ public class Main {
         e2.setOrgãoDeLotacao("SEDUC");
         e2.setBolsa(400);
         e2.setGastos(600);
+        e2.setDisciplinaMinistrada("Física");
+        e2.setNivelGraduacao("Superior");
         System.out.println(e2.toString());
         e2.reembolsoDespesas();
-        //e2.reembolsoDespesas();
+        //e2.adicionaTurma();
         //Professores:
         Professor p1 = new Professor();
         p1.setNome("Ricardo Pereira");
@@ -30,9 +36,11 @@ public class Main {
         p1.setOrgaoLotacao("SEDUC");
         p1.setSalario(2500);
         p1.setGastos(3500);
-        p1.adicionarEstagiario(e1);
+        p1.adicionarEstagiario(e1.getNome());
         System.out.println(p1.toString());
         p1.reembolsoDespesas();
+        p1.aumentoSalario();
+        //p1.adicionaTurma();
 
         Professor p2 = new Professor();
         p2.setNome("Bruno Mendes");
@@ -41,9 +49,11 @@ public class Main {
         p2.setNivelGraduacao("Superior");
         p2.setOrgaoLotacao("SEDUC");
         p2.setSalario(2500);
-        p2.adicionarEstagiario(e1);
+        p2.adicionarEstagiario(e2.getNome());
         System.out.println(p2.toString());
         p2.reembolsoDespesas();
+        p2.aumentoSalario();
+        //p2.adicionaTurma();
 
         //Coordenadores:
         Coordenador c1 = new Coordenador();
@@ -54,9 +64,10 @@ public class Main {
         c1.setSalario(3500);
         c1.setGastos(340);
         c1.aumentoSalario();
-        c1.adicionarProfessor(p1);
+        c1.adicionarProfessor(p1.getNome());
         System.out.println(c1.toString());
         c1.reembolsoDespesas();
+        c1.aumentoSalario();
 
         Coordenador c2 = new Coordenador();
         c2.setNome("Caio Fábio");
@@ -66,9 +77,10 @@ public class Main {
         c2.setSalario(3500);
         c2.setGastos(5677);
         c2.aumentoSalario();
-        c2.adicionarProfessor(p2);
+        c2.adicionarProfessor(p2.getNome());
         System.out.println(c2.toString());
-        //c2.reembolsoDespesas();
+        c2.reembolsoDespesas();
+        c2.aumentoSalario();
 
     }
 }

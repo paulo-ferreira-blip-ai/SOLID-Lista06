@@ -12,10 +12,10 @@ public class Professor extends Funcionario{
     private int qtdTurmas;
     private double salario;
     private int qtdEstagiario;
-    private ArrayList<Turma> turmas = new ArrayList<Turma>();
-    private List<Estagiário> estagiario = new ArrayList<>();
+    private ArrayList<String> turmas = new ArrayList<String>();
+    private List<String> estagiario = new ArrayList<String>();
 
-    public Professor(String nome, String cpf, int nrRegistro, double gastos, String orgaoLotacao, double salario, String nivelGraduacao, String disciplinaMinistrada, int qtdAlunos, int qtdTurmas, double salario1, int qtdEstagiario, ArrayList<Turma> turmas, List<Estagiário> estagiario) {
+    public Professor(String nome, String cpf, int nrRegistro, double gastos, String orgaoLotacao, double salario, String nivelGraduacao, String disciplinaMinistrada, int qtdAlunos, int qtdTurmas, double salario1, int qtdEstagiario, ArrayList<String> turmas, List<String> estagiario) {
         super();
         this.nivelGraduacao = nivelGraduacao;
         this.disciplinaMinistrada = disciplinaMinistrada;
@@ -28,25 +28,35 @@ public class Professor extends Funcionario{
     }
 
     //Métodos:
-    public void adicionaTurma(Turma turma){
+    public void adicionaTurma(String turma){
         this.turmas.add(turma);
         this.setQtdTurmas(this.getQtdTurmas() + 1);
     }
 
+    @Override
+    public void reembolsoDespesas() {
+        if (getGastos() > getSalario()){
+            System.out.println("Reembolso aprovado!");
+        } else {
+            System.out.println("Reembolso reprovado.");
+        }
+    }
+
+    @Override
     public void aumentoSalario() {
         this.setSalario(this.getSalario() * 0.1);
     }
 
-    public void adicionarEstagiario(Estagiário estagiário){
+
+    public void adicionarEstagiario(String estagiário){
 
         this.estagiario.add(estagiário);
         this.setQtdEstagiario(this.getQtdEstagiario()+1);
-
     }
 
     @Override
     public String toString() {
-        return ("Professor: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ " Orgão Lotação: "+getOrgaoLotacao()+" Salário: "+getSalario()+" Gastos: "+getGastos()+"Estagiários adicionados: "+estagiario);
+        return ("Professor: "+" Dados { "+ " Nome: "+getNome()+ " CPF: "+getCpf()+" Número de Registro: "+ getNrRegistro()+ "\nOrgão Lotação: "+getOrgaoLotacao()+" Salário: "+getSalario()+" Gastos: "+getGastos()+"\nEstagiários supervisionados: "+estagiario+"\nTurmas: "+turmas);
     }
 
     //MÉTODOS ESPECIAIS/////////////////////////////////////////////////////////
@@ -107,19 +117,19 @@ public class Professor extends Funcionario{
         this.qtdEstagiario = qtdEstagiario;
     }
 
-    public ArrayList<Turma> getTurmas() {
+    public ArrayList<String> getTurmas() {
         return turmas;
     }
 
-    public void setTurmas(ArrayList<Turma> turmas) {
+    public void setTurmas(ArrayList<String> turmas) {
         this.turmas = turmas;
     }
 
-    public List<Estagiário> getEstagiario() {
+    public List<String> getEstagiario() {
         return estagiario;
     }
 
-    public void setEstagiario(List<Estagiário> estagiario) {
+    public void setEstagiario(List<String> estagiario) {
         this.estagiario = estagiario;
     }
 

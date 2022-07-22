@@ -15,9 +15,17 @@ public class FuncionarioAdmin extends Funcionario{
         this.senioridade = senioridade;
     }
 
+    @Override
+    public void reembolsoDespesas() {
+
+    }
+
+    @Override
     public void aumentoSalario() {
         this.setSalario(this.getSalario() * 0.1);
+
     }
+
 
     @Override
     public String toString() {

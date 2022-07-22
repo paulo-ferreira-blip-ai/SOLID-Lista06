@@ -1,4 +1,4 @@
-public abstract class Funcionario {
+public abstract class Funcionario implements Métodos {
     //ATRIBUTOS/////////////////////////////////////////////////////////////////
     private String nome;
     private String cpf;
@@ -16,23 +16,8 @@ public abstract class Funcionario {
         this.salario = salario;
     }
 
-    //MÉTODOS///////////////////////////////////////////////////////////////////
-
-    public void reembolsoDespesas() {
-        if (getGastos() > getSalario()) {
-            System.out.println("Reembolso aprovado!");
-
-
-        }else {
-            System.out.println("Reembolso reprovado.");
-        }
-    }
-
-
 
     //MÉTODOS ESPECIAIS/////////////////////////////////////////////////////////
-
-
     public String getNome() {
         return nome;
     }

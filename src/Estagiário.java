@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estagiário {
     private String nome;
     private String CPF;
@@ -5,10 +8,37 @@ public class Estagiário {
     private String orgãoDeLotacao;
     private double bolsa;
     private double gastos;
+    private String nivelGraduacao;
+    private String disciplinaMinistrada;
+    private int qtdTurmas;
+    List<String> turmas = new ArrayList<String>();
+
+
+
+    public void reembolsoDespesas(){
+        if (getGastos() > getBolsa()){
+            System.out.println("Reembolso aprovado!");
+        } else {
+            System.out.println("Reembolso reprovado.");
+
+        }
+    }
+
+    public void adicionaTurma(String turmas){
+        this.turmas.add(turmas);
+        this.setQtdTurmas(this.getQtdTurmas() + 1);
+    }
+
+    @Override
+    public String toString() {
+        return ("Estagiário: "+" Dados { "+ " Nome: "+nome+ " CPF: "+CPF+" Número de Registro: "+ numRegistro+ "\nOrgão Lotação: "+orgãoDeLotacao+" Bolsa: "+bolsa+" Gastos: "+gastos+"Turmas: "+turmas);
+    }
 
     public String getNome() {
         return nome;
     }
+
+
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -45,26 +75,38 @@ public class Estagiário {
     public void setBolsa(double bolsa) {
         this.bolsa = bolsa;
     }
-    public double getGastos(){
-        return gastos;
 
+    public double getGastos() {
+        return gastos;
     }
 
-    public void setGastos(double gastos){
+    public void setGastos(double gastos) {
         this.gastos = gastos;
     }
 
-    public void reembolsoDespesas(){
-         if (getGastos() > getBolsa()){
-            System.out.println("Reembolso aprovado!");
-        } else {
-            System.out.println("Reembolso reprovado.");
-
-        }
+    public String getNivelGraduacao() {
+        return nivelGraduacao;
     }
 
-    @Override
-    public String toString() {
-        return ("Estagiário: "+" Dados { "+ " Nome: "+nome+ " CPF: "+CPF+" Número de Registro: "+ numRegistro+ " Orgão Lotação: "+orgãoDeLotacao+" Bolsa: "+bolsa+" Gastos: "+gastos);
-        }
+    public void setNivelGraduacao(String nivelGraduacao) {
+        this.nivelGraduacao = nivelGraduacao;
+    }
+
+    public String getDisciplinaMinistrada() {
+        return disciplinaMinistrada;
+    }
+
+    public void setDisciplinaMinistrada(String disciplinaMinistrada) {
+        this.disciplinaMinistrada = disciplinaMinistrada;
+    }
+
+
+    public int getQtdTurmas() {
+        return qtdTurmas;
+    }
+
+    public void setQtdTurmas(int qtdTurmas) {
+        this.qtdTurmas = qtdTurmas;
+    }
+
 }
